@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Home{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  	<table id="status">
+		<tr>
+			<th>Bloque</th>
+			<th>Hash</th> 
+			<th>Fecha</th>
+			<th>Cantidad</th>
+		</tr>
+		
+		{% for block in blocks %}
+		    <tr>
+			    <td>{{ block.height }}</td>
+                <td>{{ block.hash }}</td>
+                <td>{{ block.time }}</td>
+                <td>0</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
